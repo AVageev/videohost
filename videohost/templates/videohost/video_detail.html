@@ -1,0 +1,65 @@
+{% extends 'videohost/base.html' %}
+{% block content %}
+<div>
+        <ul>
+            <div class="video-post">
+                <li>{{ video.title }}</li>
+                <li class="video-post-videofile">
+                    <video width="800" height="500" controls>
+                        <source src="{{ video.video_file.url }}" type="video/mp4">
+                    </video>
+                </li>
+                <li>{{ video.views_count }} просмотров || {{ video.date_load }} </li>
+                <li>
+                    <img src="{{ video.author.avatar }}" id="video_detail_avatar"> <!-- Откорректриовать, url не работает -->
+                    {{ video.author }}
+                    {% if request.user.is_authenticated == True %}
+                        {% if request.user.profile != video.author %}
+                            <form method="post" action="{% url 'video_detail' video_id=video.id %}">
+                                {% csrf_token %}
+                                {% if subscriber %}
+                                <!-- QuerySet не пустой, содержит какие-то объекты -->
+                                    <button type="submit" name="unsubscribe" value="un-sub" class="sub-unsub-btn">Отписаться</button>
+                                {% else %}
+                                    <!-- QuerySet пустой -->
+                                    <button type="submit" name="subscribe" value="sub" class="sub-unsub-btn">Подписаться</button>
+                                {% endif %}
+                            </form>
+                        {% elif request.user.profile == video.author %}
+                            <a href="{% url 'dashboard' %}">Мой канал</a>
+                        {% endif %}
+                    {% endif %}
+                    {% if request.user.is_authenticated == False %}
+                    <form action="{% url 'login' %}" method="get">
+                        <button class="sub-unsub-btn">Подписаться</button>
+                    </form>
+                    {% endif %}
+                </li>
+                <li>{{ video.description }}</li>
+            </div>
+            <div class="video-post-add-comment">
+                <form method="post" action="{% url 'video_detail' video_id=video.id %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Добавить комментарий</button>
+                </form>
+            </div>
+
+            <div class="video-post-comments">
+             <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for c in comments_model %}
+                    {% if c.video.pk == video.id %}
+                         <li>{{ c.text }} || {{ c.author }}  <button type="submit" name="del_comment_id" value="{{ c.id }}">Удалить комментарий</button></li>
+                    {% endif %}
+                {% endfor %}
+             </form>
+            </div>
+
+        </ul>
+</div>
+
+
+
+
+{% endblock %}

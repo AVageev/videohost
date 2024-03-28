@@ -1,0 +1,7 @@
+{% extends 'videohost/base.html' %}
+{% block content %}
+{% if playlist.access == 'Доступно только мне' and request.user == playlist.creator.user or playlist.access == 'Доступно всем' or playlist.access == 'Доступно по ссылке' %}
+Страница плейлиста {{ playlist.name }}
+{% endif %}
+
+{% endblock %}

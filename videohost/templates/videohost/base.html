@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" href="{% static 'videohost/css/styles.css'%}" rel="stylesheet">
+    <title>{{ title }}</title>
+</head>
+<body>
+
+<div id="header-log-in">
+     <span>
+         {% if request.user.is_authenticated %}
+         <center>
+             <a href="{% url 'dashboard' %}" class="header-link">{{ request.user.username }}</a><br>
+             <a href="{% url 'logout' %}" class="header-link">Выход</a>
+             {% else %}
+             <a href="{% url 'login' %}" class="header-link">Вход</a>
+         </center>
+         {% endif %}
+     </span>
+</div>
+<div class="menu">
+    <ul>
+        <li><a href="{% url 'feed' %}">Главная</a></li>
+        <li><a href="{% url 'dashboard' %}">Мой канал</a></li>
+        <li><a href="{% url 'channel_videos' %}">Мои видео</a></li>
+        <li><a href="{% url 'my_subscriptions' %}">Подписки</a></li>
+        <li><a href="{% url 'views_history' %}">История просмотров</a></li>
+        <li><a href="#">Плейлисты</a></li>
+    </ul>
+</div>
+
+{% block content %}
+{% endblock %}
+</body>
+</html>

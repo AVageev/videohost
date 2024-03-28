@@ -1,0 +1,19 @@
+{% extends "videohost/base.html" %}
+{% block title %}Log-in{% endblock %}
+{% block content %}
+ {% if form.errors %}
+ <p>Логин или пароль неверны. Попробуйте снова.</p>
+ {% endif %}
+ <div class="login-form">
+ <form action="{% url 'login' %}" method="post">
+  <center><h1>Вход</h1></center>
+  {{ form.as_p }}
+ {% csrf_token %}
+ <input type="hidden" name="next" value="{{ next }}" />
+ <p><input type="submit" value="Вход"><a href="{% url 'register' %}">Зарегистрироваться</a></p>
+  <a class="password_change_link" href="{% url 'password_change' %}">Забыли пароль?</a>
+ </form>
+ </div>
+
+
+{% endblock %}

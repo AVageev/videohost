@@ -1,0 +1,20 @@
+{% extends 'videohost/base.html' %}
+{% block content %}
+
+<div class="views-history-videos">
+    {% for h in history %}
+    <div class="history-block-video">
+        <a href="{% url 'video_detail' h.video.id %}">
+            <img src="{{ h.video.preview.url }}" alt="preview">
+            <div class="history-block-video-description">
+                <h3>{{ h.video.title }}</h3>
+                <p>Автор: {{ h.video.author.nick }}</p>
+                <p>{{ h.video.views_count }} просмотров  || {{ h.video.date_load }}</p>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'videohost/base.html' %}
+{% block content %}
+<div class="feed-videos" id="my-subscriptions-feed">
+    {% for m in my_subscriptions %}
+        {% for v in video %}
+            {% if v.author == m.channel %}
+                <div class="block-video">
+                    <a href="{% url 'video_detail' v.id %}">
+                        <img src="{{ v.preview.url }}" alt="preview">
+                        <div class="block-video-description">
+                            <h3>{{ v.title }}</h3>
+                            <p>Автор: {{ v.author }}</p>
+                            <p>{{ v.views_count }} просмотров  || {{ v.date_load }}</p>
+                        </div>
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}

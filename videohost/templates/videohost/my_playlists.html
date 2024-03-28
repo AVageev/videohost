@@ -1,0 +1,7 @@
+{% extends 'videohost/base.html' %}
+{% block content %}
+{% for p in my_playlists %}
+<ul>
+  <li>{{ p.playlist_preview }}</li>
+</ul>
+{% endblock %}

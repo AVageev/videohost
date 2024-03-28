@@ -1,0 +1,25 @@
+{% extends 'videohost/base.html' %}
+{% block content %}
+
+{% for p in profiles %}
+<div class="channel_cover">
+   <img src="{{ p.cover.url }}" alt="cover">
+</div>
+<div class="my_channel_header">
+   <div class="channel_avatar">
+         <img src="{{ p.avatar.url }}" alt="avatar">
+   </div>
+</div>
+{% endfor %}
+<div class="my_channel_navigation">
+    <ul>
+       <li><a href="{% url 'channel_videos' %}">Мои видео</a></li>
+       <li><a href="#">Описание</a></li>
+       <li><a href="#">Аналитика</a></li>
+       <li><a href="{% url 'my_channel_settings' %}">Настройки</a></li>
+   </ul>
+</div>
+<a href="{% url 'upload_video' %}" class="upload-video-button">+ Добавить видео</a>
+
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "videohost/base.html" %}
+{% block title %}Создать аккаунт{% endblock %}
+{% block content %}
+<div class="register-form">
+ <form action="." method="post">
+  <h1>Создать аккаунт</h1>
+ {{ user_form.as_p }}
+ {% csrf_token %}
+ <p><input type="submit" value="Создать аккаунт"></p>
+ </form>
+</div>
+{% endblock %}
+

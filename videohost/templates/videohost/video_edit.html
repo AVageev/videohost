@@ -1,0 +1,11 @@
+{% extends "videohost/base.html" %}
+{% block title %}Edit Video{% endblock %}
+{% block content %}
+  <h2>Edit Video</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ video_edit_form.as_p }}
+    <button type="submit">Save Changes</button>
+    <button type="submit" name="del" value="del_video">Удалить видео</button>
+  </form>
+{% endblock %}

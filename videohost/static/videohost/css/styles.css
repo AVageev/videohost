@@ -1,0 +1,708 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.feed-videos{
+    margin-left: 220px;
+}
+.block-video {
+    width: 300px; /* Ширина блока видео, учитывая отступы между блоками */
+    margin-top: 30px;
+    margin-right: 50px; /* Отступ между блоками видео */
+    border-radius: 5px; /* Скругление углов */
+    overflow: hidden; /* Прячем содержимое, которое может выходить за пределы блока */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Тень блока */
+    float: left; /* Выравниваем блоки по горизонтали */
+}
+.block-video a {
+    text-decoration: none;
+    display: block;
+}
+.block-video a:hover{
+    background-color: #b2b2b2;
+}
+
+.block-video img {
+    width: 100%; /* Сделать изображение 100% ширины родительского контейнера */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+}
+
+.block-video-description {
+    padding: 10px; /* Отступы внутри блока с описанием */
+    background-color: #f5f5f5; /* Цвет фона блока с описанием */
+}
+
+.block-video-description h3 {
+    margin: 0 0 5px; /* Убрать отступ снизу для заголовка */
+}
+
+.block-video-description p {
+    margin: 0; /* Убрать отступы у параграфов */
+}
+
+.block-video:last-child {
+    margin-right: 0; /* Убираем правый отступ у последнего блока */
+}
+
+
+
+#header-log-in {
+    float: right;
+    margin-top: -30px;
+    margin-right: 20px;
+    width: 120px;
+    height: 50px;
+    background-color: #003d57;
+    border-radius: 5px; /* Добавляем закругление углов */
+    padding: 10px; /* Добавляем отступы внутри блока */
+    box-sizing: border-box; /* Учитываем внешние границы в общем размере */
+}
+
+.header-link {
+    color: white;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+.header-link:hover {
+    text-decoration: underline; /* Добавляем подчеркивание при наведении на ссылки */
+}
+
+.container {
+    margin: 20px;
+}
+
+
+
+.search-form{
+    margin-top: -300px;
+}
+
+.button{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #003d57;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.button:hover{
+	background-color: #003449;
+}
+.search-input {
+    padding: 8px; /* Отступ внутри поля ввода */
+    border: 2px solid rgba(38, 38, 38, 0.75); /* Граница вокруг поля ввода, синего цвета */
+    border-radius: 5px; /* Закругление углов поля ввода */
+    font-size: 16px; /* Размер текста в поле ввода */
+    width: 500px; /* Ширина поля ввода (можно изменить по желанию) */
+    transition: border-color 0.3s ease; /* Плавное изменение цвета границы при фокусировке */
+}
+
+.search-input:focus {
+    background-color: #ececec
+}
+.filters {
+	margin-top: 15px;
+	margin-left: 400px;
+}
+.filters form button{
+	margin-left: 20px;
+	height: 30px;
+	border: 1px solid rgba(38, 38, 38, 0.75);
+	border-radius: 5px;
+	background-color: #003d57;
+    color: #fff;
+}
+.filters form button:hover{
+	cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #003449;
+}
+
+
+
+.menu {
+    margin-top: 50px;
+    font-family: Arial, sans-serif;
+}
+
+.menu ul {
+    padding: 0; /* Убираем внутренние отступы */
+}
+
+.menu ul li {
+    display: block; /* Располагаем пункты меню по вертикали */
+    margin-bottom: 10px; /* Добавляем интервал между пунктами меню */
+    width: 200px;
+}
+
+.menu ul li:last-child {
+    margin-bottom: 0; /* У последнего пункта меню убираем нижний отступ */
+}
+
+.menu ul li a {
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    color: #333; /* Цвет текста ссылок */
+    padding: 10px 15px; /* Отступы вокруг текста ссылок */
+    border-radius: 5px; /* Закругляем углы ссылок */
+    transition: background-color 0.3s ease; /* Плавное изменение цвета фона при наведении */
+    display: block; /* Располагаем ссылки по вертикали */
+}
+
+.menu ul li a:hover {
+    background-color: #f0f0f0; /* Изменяем цвет фона при наведении */
+}
+
+
+
+.channel_cover{
+    margin-top: -300px;
+    margin-left: 200px;
+    width: 1000px;
+    height: 150px;
+    background-color: #003d57;
+    border-radius: 5px;
+}
+.channel_cover img{
+    width: 100%;
+    height: 100%;
+}
+
+.my_channel_navigation{
+    display: block;
+    margin-left: 400px;
+}
+.my_channel_navigation ul li{
+    float: left;
+    padding: 20px;
+    font-size: 19px;
+    color: #333333;
+}
+.my_channel_navigation ul li a{
+    text-decoration: none;
+    color: #333333;
+    padding: 10px;
+}
+.my_channel_navigation ul li a:hover{
+    background-color: #e3e3e3;
+    border-radius: 5px;
+}
+
+.upload-video-button {
+    margin-top: 10px;
+    display: inline-block;
+    background-color: #003d57; /* Зеленый цвет фона */
+    color: white; /* Белый цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    border-radius: 5px; /* Скругление углов */
+    transition: background-color 0.3s ease; /* Плавное изменение цвета фона при наведении */
+}
+
+.upload-video-button:hover {
+    background-color: #45a049; /* Темно-зеленый цвет фона при наведении */
+}
+.channel_avatar {
+        width: 100px; /* Ширина круга */
+        height: 100px; /* Высота круга */
+        border-radius: 50%; /* Радиус границы, равный половине ширины/высоты, чтобы создать круг */
+        margin-left: 250px;
+        margin-top: 25px;
+    }
+.channel_avatar img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+
+/* Стили для формы */
+.video-upload-form {
+    max-width: 500px; /* Максимальная ширина формы */
+    margin: 0 auto; /* Центрируем форму по горизонтали */
+
+    margin-top: -200px;
+    background-color: #f9f9f9; /* Цвет фона формы */
+    padding: 20px; /* Отступы внутри формы */
+    border-radius: 5px; /* Скругление углов */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень формы */
+}
+
+/* Стили для группы формы */
+.video-upload-form .form-group {
+    margin-bottom: 20px; /* Отступ снизу для каждой группы формы */
+}
+
+/* Стили для метки */
+.video-upload-form label {
+    display: block; /* Отображаем метку на новой строке */
+    font-weight: bold; /* Жирный шрифт */
+}
+
+/* Стили для текстового поля */
+.video-upload-form input[type="text"],
+.video-upload-form input[type="file"],
+.video-upload-form textarea,
+.video-upload-form select {
+    width: 100%; /* Заполнить всю доступную ширину */
+    padding: 10px; /* Отступы внутри поля */
+    border: 1px solid #ccc; /* Граница */
+    border-radius: 5px; /* Скругление углов */
+    box-sizing: border-box; /* Размеры включают границу и отступы */
+}
+
+/* Стили для кнопки */
+.video-upload-form button[type="submit"] {
+    background-color: #007bff; /* Цвет фона кнопки */
+    color: #fff; /* Цвет текста */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Скругление углов */
+    cursor: pointer; /* Курсор при наведении */
+    transition: background-color 0.3s ease; /* Плавное изменение цвета фона при наведении */
+}
+
+.video-upload-form button[type="submit"]:hover {
+    background-color: #0056b3; /* Цвет фона кнопки при наведении */
+}
+.video-post {
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+    padding: 20px;
+}
+#video_detail_avatar{
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+.video-post-videofile{
+    margin-top: -300px;
+}
+.video-post-videofile video{
+    width: 800px;
+    height: 500px;
+}
+
+
+.video-post-videofile video {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Стилизация элементов управления видеоплеера */
+.video-post-videofile video::-webkit-media-controls-panel {
+    background-color: rgba(0, 0, 0, 0.7); /* Цвет фона */
+    border-radius: 8px; /* Скругление углов */
+    padding: 5px; /* Внутренний отступ */
+}
+
+/* Стилизация кнопок */
+.video-post-videofile video::-webkit-media-controls-play-button,
+.video-post-videofile video::-webkit-media-controls-pause-button,
+.video-post-videofile video::-webkit-media-controls-volume-slider-button,
+.video-post-videofile video::-webkit-media-controls-mute-button,
+.video-post-videofile video::-webkit-media-controls-timeline {
+    color: white; /* Цвет иконок */
+}
+
+
+/* Стилизация ползунка времени */
+.video-post-videofile video::-webkit-media-controls-timeline,
+.video-post-videofile video::-webkit-media-controls-current-time-display,
+.video-post-videofile video::-webkit-media-controls-time-remaining-display {
+    color: white; /* Цвет текста */
+    font-size: 12px; /* Размер шрифта */
+}
+
+/* Скрытие кнопки полноэкранного режима */
+.video-post-videofile video::-webkit-media-controls-fullscreen-button {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+.video-post-comments{
+    margin-left: 200px;
+    margin-top: 20px;
+}
+.video-post-comments li{
+    margin-top: 10px;
+}
+.video-post-add-comment form {
+    margin-left: 200px;
+    margin-top: 20px;
+    width: 500px;
+}
+
+.video-post-add-comment textarea {
+    height: 20px;
+    width: 100%; /* Занимаем всю доступную ширину */
+    padding: 10px; /* Отступы внутри текстового поля */
+    border: 1px solid #ccc; /* Граница */
+    border-radius: 5px; /* Скругление углов */
+    resize: vertical; /* Разрешаем вертикальное изменение размера */
+}
+
+.video-post-add-comment button[type="submit"] {
+    background-color: #007bff; /* Цвет фона кнопки */
+    color: #fff; /* Цвет текста */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Скругление углов */
+    cursor: pointer; /* Курсор при наведении */
+    transition: background-color 0.3s ease; /* Плавное изменение цвета фона при наведении */
+}
+
+.video-post-add-comment button[type="submit"]:hover {
+    background-color: #0056b3; /* Цвет фона кнопки при наведении */
+}
+
+
+.login-form {
+    max-width: 300px;
+    margin-top: -200px;
+    margin-left: 500px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form .form-group {
+    margin-bottom: 20px;
+}
+.login-form h1{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.login-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.login-form input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.login-form a {
+    display: inline-block; /* Отображаем ссылку как блочный элемент */
+    background-color: #007bff; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    padding: 10px 20px; /* Отступы внутри ссылки */
+    border-radius: 5px; /* Скругление углов */
+    text-decoration: none; /* Убираем подчеркивание */
+    transition: background-color 0.3s ease; /* Плавное изменение цвета фона при наведении */
+    float: right;
+}
+
+.login-form a:hover {
+    background-color: #0056b3; /* Цвет фона ссылки при наведении */
+}
+.password_change_link{
+    margin-top: 10px;
+    margin-right: 80px;
+}
+
+.register-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-form h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.register-form input[type="text"],
+.register-form input[type="password"],
+.register-form input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.register-form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.register-form input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Стили для скрытия helptext */
+.register-form label span {
+  display: none;
+}
+
+/* Показать helptext при фокусе на поле */
+.register-form input:focus + span {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 0.8em;
+  color: #666;
+}
+
+/* Дополнительные стили для CSRF-токена */
+.register-form input[type="hidden"] {
+  display: none;
+}
+
+/* Стили для формы */
+.register-form {
+    margin-top: -250px;
+    margin-left: 500px;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-form h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.register-form input[type="text"],
+.register-form input[type="password"],
+.register-form input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.register-form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.register-form input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Скрыть helptext */
+.register-form label span {
+  display: none;
+}
+
+/* Показать helptext при фокусе на поле */
+.register-form input:focus + span {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 0.8em;
+  color: #666;
+}
+
+/* Дополнительные стили для CSRF-токена */
+.register-form input[type="hidden"] {
+  display: none;
+}
+
+.edit-profile {
+  max-width: 400px;
+  margin-top: -300px;
+    margin-left: 500px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit-profile h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.edit-profile input[type="text"],
+.edit-profile input[type="password"],
+.edit-profile input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.edit-profile textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.edit-profile input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-profile input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+
+.sub-unsub-btn {
+    background-color: #4CAF50; /* Зеленый цвет фона */
+    color: white; /* Белый цвет текста */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    font-size: 16px; /* Размер текста */
+    border: none; /* Убираем границу кнопки */
+    cursor: pointer; /* Изменяем курсор при наведении */
+    border-radius: 5px; /* Закругляем углы кнопки */
+}
+
+/* Стиль кнопки при наведении */
+.sub-unsub-btn:hover {
+    background-color: #45a049; /* Темно-зеленый цвет фона */
+}
+
+/* Стиль кнопки при нажатии */
+.sub-unsub-btn:active {
+    background-color: #3e8e41; /* Еще более темный зеленый цвет фона */
+}
+
+
+/* styles.css */
+
+.views-history-videos {
+    display: flex;
+    flex-direction: column; /* Располагаем видео вертикально */
+    align-items: center; /* Центрируем видео по горизонтали */
+    margin-top: -220px;
+}
+
+.history-block-video {
+    width: 50%; /* Ширина каждого блока видео */
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.history-block-video img {
+    width: 100%;
+    height: auto;
+}
+
+.history-block-video-description {
+    padding: 10px;
+}
+
+.history-block-video-description h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.history-block-video-description p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.history-block-video-description p.author {
+    color: #888;
+}
+#my-subscriptions-feed{
+    margin-top: -250px;
+}

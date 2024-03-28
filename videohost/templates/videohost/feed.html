@@ -1,0 +1,38 @@
+{% extends 'videohost/base.html' %}
+{% block content %}
+
+    <div class="search-form">
+        <center>
+            <form method="get" action="{% url 'feed' %}">
+                <input type="text" name="search" placeholder="Поиск по названию" value="{{ request.GET.search }}" class="search-input">
+                <button type="submit" class="button">Искать</button>
+            </form>
+        </center>
+    </div>
+
+    <div class="filters">
+        <form method="get" action="{% url 'feed' %}">
+            <button type="submit" name="sort" value="newest">Сначала новые</button>
+            <button type="submit" name="sort" value="oldest">Сначала старые</button>
+            <button type="submit" name="sort" value="max_views">Больше просмотров</button>
+        </form>
+    </div>
+
+
+<div class="feed-videos">
+    {% for v in videos %}
+    <div class="block-video">
+        <a href="{% url 'video_detail' v.id %}">
+            <img src="{{ v.preview.url }}" alt="preview">
+            <div class="block-video-description">
+                <h3>{{ v.title }}</h3>
+                <p>Автор: {{ v.author.nick }}</p>
+                <p>{{ v.views_count }} просмотров  || {{ v.date_load }}</p>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}
