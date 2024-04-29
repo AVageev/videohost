@@ -3,7 +3,7 @@
 
 {% for p in profiles %}
 <div class="channel_cover">
-   <img src="{{ p.cover.url }}" alt="cover">
+  <!-- <img src="{{ p.cover.url }}" alt="cover"> -->
 </div>
 <div class="my_channel_header">
    <div class="channel_avatar">
@@ -20,6 +20,6 @@
    </ul>
 </div>
 <a href="{% url 'upload_video' %}" class="upload-video-button">+ Добавить видео</a>
-
+<a href="#" class="create-playlist-button">Создать плейлист</a>
 
 {% endblock %}
